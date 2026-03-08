@@ -1,0 +1,22 @@
+{
+  "name": "r7",
+  "profession": "Providence University Student",
+  "age": 21,
+  "height": 180,
+  "weight": 70,
+  "address": {
+    "city": "Taichung",
+    "Country": "Taiwan"
+  },
+  "languages": ["Python", "Rust", "JavaScript", "C++"],
+  "socialProfiles": [
+    {
+      "name": "Discord",
+      "link": "https://discord.com"
+    },
+    {
+      "name": "GitHub",
+      "link": "https://github.com/archie0732"
+    }
+  ]
+}
