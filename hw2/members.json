@@ -1,0 +1,14 @@
+{
+  "member1": {
+    "name": "許育祁",
+    "id": "411211480",
+    "role": "後端開發",
+    "email": "hutao715.2006@gmail.com"
+  },
+  "member2": {
+    "name": "胡桃",
+    "id": "20060715",
+    "role": "前端設計",
+    "email": "hua@example.com"
+  }
+}

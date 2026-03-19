@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW3 - 組員名單</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .member-card {
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        cursor: pointer;
+        border-radius: 12px;
+      }
+      .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+      }
+      .header-section {
+        background-color: white;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #e9ecef;
+      }
+      /* 移除超連結下劃線 */
+      a.card-link {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-section text-center">
+      <div class="container">
+        <h1 class="display-5 fw-bold text-primary">Homework 3</h1>
+        <p class="lead text-muted">組員名單</p>
+        <span class="badge bg-secondary">ex</span>
+      </div>
+    </div>
+
+    <div class="container mb-5">
+      <div class="row g-4">
+        {% if members %} {% for key, val in members.items() %}
+        <div class="col-md-6 col-lg-4">
+          <a href="/member/{{ key }}" class="card-link">
+            <div class="card h-100 member-card shadow-sm">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                    style="width: 60px; height: 60px; font-size: 1.5rem"
+                  >
+                    {{ val.name[0] }}
+                  </div>
+                  <div class="ms-3">
+                    <h5 class="card-title mb-1 fw-bold">{{ val.name }}</h5>
+                    <p class="card-subtitle text-muted">{{ val.id }}</p>
+                  </div>
+                </div>
+                <hr class="my-2 text-muted" />
+                <p class="card-text text-secondary">
+                  <span class="badge bg-light text-dark">{{ val.role }}</span>
+                </p>
+              </div>
+              <div class="card-footer bg-white border-0 text-end">
+                <span class="text-primary small fw-bold">查看詳細資料 →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %} {% else %}
+        <div class="col-12 text-center mt-5">
+          <div class="alert alert-warning" role="alert">
+            尚無組員資料，請檢查 `members.json` 檔案。
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
