@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% block title %}註冊新帳號{% endblock %} {% block
+content %}
+<div class="card auth-card">
+  <div class="card-header">
+    <h2 class="fw-bold text-primary">註冊</h2>
+    <p class="text-muted">請填寫以下資訊以建立帳號</p>
+  </div>
+  <div class="card-body p-4">
+    <form method="POST">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="王小明"
+          required
+        />
+        <label for="name">姓名</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="tel"
+          class="form-control"
+          id="phone"
+          name="phone"
+          placeholder="0912345678"
+          required
+        />
+        <label for="phone">電話</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          name="address"
+          placeholder="台北市..."
+          required
+        />
+        <label for="address">地址</label>
+      </div>
+
+      <hr class="my-4" />
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="username"
+          required
+        />
+        <label for="username">設定帳號</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <label for="password">設定密碼</label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">建立帳號</button>
+      </div>
+    </form>
+  </div>
+  <div
+    class="card-footer text-center py-3 bg-light border-0"
+    style="border-radius: 0 0 15px 15px"
+  >
+    <div class="small">
+      已經有帳號了？ <a href="{{ url_for('login') }}">按此登入</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

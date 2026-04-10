@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}使用者登入{% endblock %} {% block
+content %}
+<div class="card auth-card">
+  <div class="card-header">
+    <h2 class="fw-bold text-primary">登入</h2>
+    <p class="text-muted">歡迎回來，請輸入您的憑證</p>
+  </div>
+  <div class="card-body p-4">
+    <form method="POST">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="username"
+          required
+        />
+        <label for="username">帳號</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <label for="password">密碼</label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">登入</button>
+      </div>
+    </form>
+  </div>
+  <div
+    class="card-footer text-center py-3 bg-light border-0"
+    style="border-radius: 0 0 15px 15px"
+  >
+    <div class="small">
+      還沒有帳號？ <a href="{{ url_for('register') }}">立即註冊</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
